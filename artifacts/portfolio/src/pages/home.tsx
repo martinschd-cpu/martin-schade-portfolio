@@ -181,7 +181,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center pt-28 md:pt-32 px-6 md:px-16 lg:px-24">
+        <div className="relative z-10 h-full flex flex-col justify-start pt-40 md:pt-44 pb-8 px-6 md:px-16 lg:px-24">
           <div className="max-w-4xl">
             <AnimatePresence mode="wait">
               <motion.h1
