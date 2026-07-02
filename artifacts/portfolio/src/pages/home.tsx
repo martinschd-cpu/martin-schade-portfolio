@@ -152,7 +152,7 @@ export default function Home() {
       </nav>
 
       {/* 01 HERO — Full-screen image slider */}
-      <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden">
+      <section id="hero" className="relative min-h-screen overflow-hidden">
         {/* Slides */}
         <AnimatePresence mode="sync">
           <motion.div
