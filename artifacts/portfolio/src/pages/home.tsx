@@ -22,6 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import martinPhoto from "@assets/ChatGPT_Image_7._Mai_2026,_11_32_19_1782982718646.png";
 
 // Animation Variants
 const fadeInUp = {
@@ -549,8 +550,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-start">
-            <div className="md:col-span-4 lg:col-span-5 aspect-[3/4] border border-[#60A5FA]/30 flex items-center justify-center bg-white/50">
-              <div className="font-mono text-sm text-[#1A1815]/40 tracking-widest uppercase">Foto einfügen</div>
+            <div className="md:col-span-4 lg:col-span-5">
+              <img
+                src={martinPhoto}
+                alt="Martin Schade"
+                className="w-full object-cover object-top"
+              />
             </div>
             
             <div className="md:col-span-8 lg:col-span-7 space-y-6 text-lg leading-relaxed text-[#1A1815]/90">
