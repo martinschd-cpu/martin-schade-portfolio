@@ -307,45 +307,71 @@ export default function Home() {
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Track Record</h2>
           </div>
 
-          <div className="space-y-16">
-            {[
+          <div className="space-y-0 border-t border-[#1A1815]/15">
+            {([
               {
-                company: "XPLN GmbH, Stuttgart",
-                role: "VP OF PRODUCTS · 2022–2023",
-                desc: "Enterprise Retail Intelligence SaaS, 120+ Enterprise-Kunden, Pricing Intelligence, Wettbewerbsbeobachtung, KI-gestützte Analytics. Roadmap-Verantwortung über drei Kernmodule, OKR-basierte Priorisierung mit der Geschäftsführung. ML-basierte Produktähnlichkeitserkennung eingeführt, neue Cross-Sell-Umsatzquelle. Plattform auf 20M+ Artikel skaliert. Cross-funktionales Team bis zu 12 Personen geführt."
-              },
-              {
-                company: "Tradebyte Software GmbH · Zalando Group",
-                role: "TEAM LEAD PRODUCT / SENIOR PM · 2015–2021",
-                desc: "Europas führende B2B-Marktplatz-Konnektivitätsplattform, drei Stationen über ca. 7 Jahre.\n- Team Lead Product (TB.One): 660+ Marken, 10,5M+ Produkte, 40+ Kanäle, Fehlerquote im Solution Center um 80% reduziert, NPS um 20% gesteigert, neue Pricing-Engine eingeführt.\n- Team Lead Integration: Aufbau und Führung eines 15-köpfigen Integration-Engineering-Teams.\n- Senior PM Business Development: strategische Zalando-Projekte, B2B-Wholesale-Produktforschung."
-              },
-              {
-                company: "RecyClaim UG, Nürnberg",
+                company: "RecyClaim UG · Nürnberg",
                 role: "FOUNDER & CEO · 2024–2025",
-                desc: "B2B-Marketplace für industrielle Stoffströme. Vollständige Plattformarchitektur entworfen: Datenmodelle, Matching-Logik, Compliance-Workflows. Strategische Partnerschaften mit Rehau und KösterBau aufgebaut. Erste kommerzielle Transaktionen durchgeführt, Geschäftsmodell nach Validierung strategisch beendet."
+                intro: "B2B-Marketplace für industrielle Stoffströme, von der Idee bis zum Markttest.",
+                bullets: [
+                  "Vollständige Plattformarchitektur eigenständig entworfen: Datenmodelle, Matching-Logik, Compliance-Workflows, Rückverfolgbarkeit",
+                  "Strategische Partnerschaften mit Rehau und KösterBau aufgebaut, erste kommerzielle Transaktionen durchgeführt",
+                  "Geschäftsmodell nach Validierung strategisch beendet (Q1 2025)",
+                ],
               },
               {
                 company: "TreePlantingProjects gUG · Impact-Plattform",
                 role: "CPO · 2020–2024",
-                desc: "Plattform von Grund auf aufgebaut, 2 Mio. Euro Umsatz, über 200.000 gepflanzte Bäume. 12 Corporate-Partnerschaften aufgebaut, Team von 10 Personen im Hauptjahr geführt."
-              }
-            ].map((item, i) => (
-              <motion.div 
+                intro: "Aufbau einer zweiseitigen Plattform zur Vermittlung von Dienstleistungen rund um den Wald, Anbindung von Waldbesitzern und Forstdienstleistern inklusive Fördermöglichkeiten für Aufforstungsprojekte.",
+                bullets: [
+                  "Plattform von Grund auf aufgebaut, 2 Mio. € Umsatz",
+                  "Über 200.000 gepflanzte Bäume",
+                  "12 Corporate-Partnerschaften aufgebaut, Team von 10 Personen im Hauptjahr geführt als CPO",
+                ],
+              },
+              {
+                company: "XPLN GmbH · Stuttgart",
+                role: "VP OF PRODUCTS · 2022–2023",
+                intro: "Enterprise Retail Intelligence SaaS, 120+ Enterprise-Kunden, Pricing Intelligence, Wettbewerbsbeobachtung, KI-gestützte Analytics.",
+                bullets: [
+                  "Roadmap-Verantwortung über drei Kernmodule, OKR-basierte Priorisierung mit der Geschäftsführung",
+                  "ML-basierte Produktähnlichkeitserkennung eingeführt, neue Cross-Sell-Umsatzquelle",
+                  "Plattform auf 20M+ Artikel skaliert, cross-funktionales Team bis zu 12 Personen geführt",
+                ],
+              },
+              {
+                company: "Tradebyte Software GmbH · Zalando Group",
+                role: "2015–2021",
+                intro: "Europas führende B2B-Marktplatz-Konnektivitätsplattform, drei Stationen über ca. 7 Jahre.",
+                bullets: [
+                  "Team Lead Product (TB.One): 660+ Marken, 10,5M+ Produkte, 40+ Kanäle, Fehlerquote im Solution Center um 80% reduziert, NPS um 20% gesteigert",
+                  "Team Lead Integration: Aufbau und Führung eines 15-köpfigen Integration-Engineering-Teams",
+                  "Senior PM Business Development: strategische Zalando-Projekte, B2B-Wholesale-Produktforschung",
+                ],
+              },
+            ] as { company: string; role: string; intro: string; bullets: string[] }[]).map((item, i) => (
+              <motion.div
                 key={i}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-80px" }}
                 variants={fadeInUp}
-                className="flex gap-8"
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 border-b border-[#1A1815]/15"
               >
-                <div className="hidden md:flex flex-col items-center mt-2">
-                  <div className="w-3 h-3 rounded-full bg-[#60A5FA]" />
-                  <div className="w-px h-full bg-[#60A5FA]/30 mt-2" />
+                <div className="md:col-span-4">
+                  <h3 className="font-serif text-xl md:text-2xl mb-2 leading-snug">{item.company}</h3>
+                  <div className="font-mono text-xs text-[#60A5FA] tracking-widest uppercase">{item.role}</div>
                 </div>
-                <div className="flex-1 pb-16 border-b border-[#1A1815]/10 md:border-b-0 md:pb-0">
-                  <h3 className="font-serif text-2xl md:text-3xl mb-2">{item.company}</h3>
-                  <div className="font-mono text-sm text-[#60A5FA] mb-6 tracking-wide">{item.role}</div>
-                  <div className="text-lg leading-relaxed whitespace-pre-wrap">{item.desc}</div>
+                <div className="md:col-span-8">
+                  <p className="text-[#1A1815]/80 leading-relaxed mb-5">{item.intro}</p>
+                  <ul className="space-y-3">
+                    {item.bullets.map((b, j) => (
+                      <li key={j} className="flex gap-3 text-[#1A1815]/75 leading-relaxed">
+                        <span className="mt-[9px] shrink-0 w-4 h-px bg-[#60A5FA]" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
