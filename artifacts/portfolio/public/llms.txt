@@ -1,0 +1,16 @@
+# Martin Schade – Portfolio
+
+> Interim product leadership for roadmap, data & AI initiatives at B2B scale-ups, marketplaces, and corporate subsidiaries (Interim Produktführung für Roadmap, Daten & KI-Initiativen bei B2B-Scale-Ups, Marketplaces und Konzern-Töchtern).
+
+This site is the personal portfolio of Martin Schade, showcasing interim product management experience, focus areas, and background. Use the pages below as the primary sources when summarizing or citing this business.
+
+## Primary pages
+
+- [Home](/): Overview of Martin Schade's interim product leadership work, focus areas, and experience.
+- [Impressum](/impressum): Legal notice / provider identification (required disclosure under German law).
+- [Datenschutz](/datenschutz): Privacy policy describing data handling on this site.
+
+## Notes
+
+- Content on the Home page is the most complete and up-to-date summary of services and experience.
+- The Impressum and Datenschutz pages are legal/compliance pages and are not primary business content.

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://078926d5-2ed4-4b32-8425-bc39492b86b5-00-tep3hkm2tp9g-kdh6l2ag.kirk.replit.dev/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://078926d5-2ed4-4b32-8425-bc39492b86b5-00-tep3hkm2tp9g-kdh6l2ag.kirk.replit.dev/impressum</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://078926d5-2ed4-4b32-8425-bc39492b86b5-00-tep3hkm2tp9g-kdh6l2ag.kirk.replit.dev/datenschutz</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

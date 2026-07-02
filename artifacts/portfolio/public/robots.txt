@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://078926d5-2ed4-4b32-8425-bc39492b86b5-00-tep3hkm2tp9g-kdh6l2ag.kirk.replit.dev/sitemap.xml
