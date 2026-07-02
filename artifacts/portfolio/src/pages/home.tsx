@@ -99,13 +99,55 @@ export default function Home() {
             <a href="#track-record" className="text-[#B8C2D4] hover:text-white transition-colors">04 Track Record</a>
             <a href="#kontakt" className="text-[#60A5FA] hover:text-white transition-colors">09 Kontakt</a>
           </div>
-          <div className="md:hidden text-[#B8C2D4] font-mono">Menu</div>
+          <button
+            data-testid="button-mobile-menu"
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] group"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Menü öffnen"
+          >
+            <span className={`block w-6 h-px bg-[#B8C2D4] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+            <span className={`block w-6 h-px bg-[#B8C2D4] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-px bg-[#B8C2D4] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+          </button>
         </div>
+
+        {/* Mobile Dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-[#0D1930]/98 border-t border-[#ffffff15] px-6 pb-6 pt-4 flex flex-col gap-5 font-mono text-sm">
+            {[
+              { href: "#hero", label: "01 Hero" },
+              { href: "#situationen", label: "02 Situationen" },
+              { href: "#ki", label: "03 KI" },
+              { href: "#track-record", label: "04 Track Record" },
+              { href: "#kontakt", label: "09 Kontakt" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[#B8C2D4] hover:text-white transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* 01 HERO */}
-      <section id="hero" className="bg-[#0D1930] text-white pt-32 pb-24 px-6 md:px-12">
-        <div className="max-w-[1200px] mx-auto">
+      <section
+        id="hero"
+        className="relative text-white pt-32 pb-20 px-6 md:px-12 overflow-hidden"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80)",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+      >
+        {/* Navy overlay */}
+        <div className="absolute inset-0 bg-[#0D1930]/82" />
+        <div className="relative z-10 max-w-[1200px] mx-auto">
           <motion.div
             initial="hidden"
             animate="visible"
