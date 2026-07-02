@@ -358,7 +358,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-[#ffffff33]">
             {[
               {
-                title: "ML-basierte Produktähnlichkeitserkennung (XPLN)",
+                title: "ML-basierte Produktähnlichkeitserkennung",
                 text: "Als VP of Products bei XPLN habe ich eine ML-basierte Ähnlichkeitserkennung für Produktdaten von der Idee bis zur Produktionsreife verantwortet. Ergebnis: eine neue Cross-Sell-Umsatzquelle, ausgerollt auf eine Plattform mit 20+ Millionen Artikeln, mit spürbar reduziertem manuellem Analyseaufwand für Enterprise-Kunden."
               },
               {
