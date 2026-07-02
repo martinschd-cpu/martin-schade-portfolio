@@ -23,13 +23,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useSendContactMessage } from "@workspace/api-client-react";
 import martinPhoto from "@assets/ChatGPT_Image_7._Mai_2026,_11_32_19_1782982718646.png";
 
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+} as const;
 
 const SLIDES = [
   {
@@ -94,13 +95,28 @@ export default function Home() {
     },
   });
 
+  const sendContactMessage = useSendContactMessage();
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast({
-      title: "Nachricht gesendet",
-      description: "Vielen Dank für Ihre Anfrage. Ich melde mich in Kürze bei Ihnen.",
-    });
-    form.reset();
+    sendContactMessage.mutate(
+      { data: values },
+      {
+        onSuccess: () => {
+          toast({
+            title: "Nachricht gesendet",
+            description: "Vielen Dank für Ihre Anfrage. Ich melde mich in Kürze bei Ihnen.",
+          });
+          form.reset();
+        },
+        onError: () => {
+          toast({
+            title: "Nachricht konnte nicht gesendet werden",
+            description: "Bitte versuchen Sie es später erneut oder schreiben Sie mir direkt per E-Mail.",
+            variant: "destructive",
+          });
+        },
+      },
+    );
   };
 
   return (

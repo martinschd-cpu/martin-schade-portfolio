@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: contact
+    description: Contact form operations
 paths:
   /healthz:
     get:
@@ -24,6 +26,37 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /contact:
+    post:
+      operationId: sendContactMessage
+      tags: [contact]
+      summary: Send a contact form message
+      description: Sends the contact form submission as an email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactRequest"
+      responses:
+        "200":
+          description: Message sent
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
+        "502":
+          description: Failed to send message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +66,33 @@ components:
           type: string
       required:
         - status
+    ContactRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 2
+        email:
+          type: string
+          format: email
+        topic:
+          type: string
+          minLength: 1
+        message:
+          type: string
+          minLength: 10
+      required:
+        - name
+        - email
+        - topic
+        - message
+    ContactResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+      required:
+        - success
 

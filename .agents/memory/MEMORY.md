@@ -1,0 +1,1 @@
+- [Contact form email delivery](contact-form-email.md) — portfolio contact form sends via Gmail connector to martin.schd@gmail.com; check before re-wiring email delivery.
