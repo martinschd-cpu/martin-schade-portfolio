@@ -526,9 +526,12 @@ export default function Home() {
               { cat: "KI / Automatisierung", tools: "Prompt Engineering, LLM-Produktintegration, AI Feature Specs, Make, Zapier" },
               { cat: "Technisch", tools: "REST APIs, JSON, Webhooks, React, Webflow, GitHub, EDIFACT" }
             ].map((stack, i) => (
-              <div key={i} className="p-8 border-b border-r border-[#ffffff33]">
-                <div className="font-mono text-sm text-[#60A5FA] mb-6 tracking-widest uppercase">{stack.cat}</div>
-                <div className="text-[#B8C2D4] leading-relaxed text-lg">{stack.tools}</div>
+              <div key={i} className="p-8 border-b border-r border-[#ffffff33] flex flex-col">
+                <div className="h-12 flex items-center">
+                  <div className="font-mono text-xs text-[#60A5FA] tracking-widest uppercase">{stack.cat}</div>
+                </div>
+                <div className="w-full h-px bg-white/20 mb-6" />
+                <div className="text-white leading-relaxed">{stack.tools}</div>
               </div>
             ))}
           </div>
