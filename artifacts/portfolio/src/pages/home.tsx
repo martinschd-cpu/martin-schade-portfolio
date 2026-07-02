@@ -696,7 +696,7 @@ export default function Home() {
             <div className="space-y-8 pt-8 md:pt-0">
               <div className="pb-8 border-b border-[#ffffff33]">
                 <div className="font-mono text-sm text-[#60A5FA] mb-2 tracking-widest uppercase">E-Mail</div>
-                <a href="mailto:martin.schd@gmail.com" className="text-xl hover:text-[#60A5FA] transition-colors">martin.schd@gmail.com</a>
+                <a href="mailto:ms@martin-schade.de" className="text-xl hover:text-[#60A5FA] transition-colors">ms@martin-schade.de</a>
               </div>
               <div className="pb-8 border-b border-[#ffffff33]">
                 <div className="font-mono text-sm text-[#60A5FA] mb-2 tracking-widest uppercase">Telefon</div>

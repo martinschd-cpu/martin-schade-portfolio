@@ -41,7 +41,7 @@ export default function Datenschutz() {
             <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Verantwortliche Stelle</h3>
             <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
             Martin Schade<br />
-            E-Mail: <a href="mailto:martin.schd@gmail.com" className="text-[#60A5FA] hover:underline">martin.schd@gmail.com</a><br />
+            E-Mail: <a href="mailto:ms@martin-schade.de" className="text-[#60A5FA] hover:underline">ms@martin-schade.de</a><br />
             Telefon: <a href="tel:+491629161676" className="text-[#60A5FA] hover:underline">+49 162 9161676</a></p>
 
             <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Speicherdauer</h3>

@@ -23,7 +23,7 @@ export default function Impressum() {
           <div>
             <h2 className="text-lg font-semibold text-white mb-2">Kontakt</h2>
             <p>
-              E-Mail: <a href="mailto:martin.schd@gmail.com" className="text-[#60A5FA] hover:underline">martin.schd@gmail.com</a><br />
+              E-Mail: <a href="mailto:ms@martin-schade.de" className="text-[#60A5FA] hover:underline">ms@martin-schade.de</a><br />
               Telefon: <a href="tel:+491629161676" className="text-[#60A5FA] hover:underline">+49 162 9161676</a>
             </p>
           </div>
