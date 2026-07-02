@@ -455,8 +455,8 @@ export default function Home() {
                 author: "RUSLAN VOROBEV · Head of Product bei Resycure, Ex-BASF, Ex-Tomra"
               },
               {
-                quote: "An exceptionally professional and hard-working leader who always stands behind his team and impresses with his expertise and engagement. A truly impressive entrepreneur, unreservedly recommended.",
-                author: "CHRIS MICHAEL WIEDMANN · Direct Report, TreePlantingProjects"
+                quote: "I worked with Martin some years ago as his client when he was a consultant. He is diligent, smart and persistent. He delivers results and does not call it a day until the job is done. And beyond that, always calm and in a good mood. It was always a big pleasure!",
+                author: "JOACHIM SCHOLZ · Portfolio Partner, Findos Investor"
               }
             ].map((ref, i) => (
               <motion.div 
