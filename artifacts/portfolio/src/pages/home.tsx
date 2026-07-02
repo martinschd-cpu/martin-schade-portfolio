@@ -183,18 +183,20 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-start pt-40 md:pt-44 pb-8 px-6 md:px-16 lg:px-24">
           <div className="max-w-4xl">
-            <AnimatePresence mode="wait">
-              <motion.h1
-                key={currentSlide}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-8"
-              >
-                "{SLIDES[currentSlide].sentence}"
-              </motion.h1>
-            </AnimatePresence>
+            <div className="min-h-[9rem] md:min-h-[15rem] lg:min-h-[19rem] mb-8">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={currentSlide}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight"
+                >
+                  "{SLIDES[currentSlide].sentence}"
+                </motion.h1>
+              </AnimatePresence>
+            </div>
 
             <motion.p
               initial={{ opacity: 0 }}
