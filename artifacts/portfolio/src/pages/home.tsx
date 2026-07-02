@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -699,9 +700,19 @@ export default function Home() {
       </section>
       
       {/* Footer */}
-      <footer className="bg-[#0a1222] py-8 text-center border-t border-[#ffffff11]">
-        <div className="font-mono text-xs text-[#B8C2D4]/50">
-          © {new Date().getFullYear()} Martin Schade. All rights reserved.
+      <footer className="bg-[#0a1222] py-8 border-t border-[#ffffff11]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="font-mono text-xs text-[#B8C2D4]/50">
+            © {new Date().getFullYear()} Martin Schade. All rights reserved.
+          </div>
+          <div className="flex gap-6 font-mono text-xs text-[#B8C2D4]/50">
+            <Link href="/impressum" className="hover:text-[#60A5FA] transition-colors">
+              Impressum
+            </Link>
+            <Link href="/datenschutz" className="hover:text-[#60A5FA] transition-colors">
+              Datenschutz
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
