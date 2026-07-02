@@ -25,7 +25,9 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useDocumentHead } from "@/hooks/use-document-head";
 import { useSendContactMessage } from "@workspace/api-client-react";
-import martinPhoto from "@assets/ChatGPT_Image_7._Mai_2026,_11_32_19_1782982718646.png";
+import martinPhoto from "@/assets/martin-photo.webp";
+
+const heroSlide1 = "/hero-slide-1.webp";
 
 // Animation Variants
 const fadeInUp = {
@@ -36,7 +38,7 @@ const fadeInUp = {
 const SLIDES = [
   {
     sentence: "Wir wachsen, aber niemand verantwortet wirklich die Roadmap.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80",
+    image: heroSlide1,
   },
   {
     sentence: "Unsere Katalogdaten aus verschiedenen Quellen passen einfach nicht zusammen.",
@@ -176,18 +178,19 @@ export default function Home() {
       <section id="hero" className="relative min-h-screen overflow-hidden">
         {/* Slides */}
         <AnimatePresence mode="sync">
-          <motion.div
+          <motion.img
             key={currentSlide}
+            src={SLIDES[currentSlide].image}
+            alt=""
+            aria-hidden="true"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url(${SLIDES[currentSlide].image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority={currentSlide === 0 ? "high" : "auto"}
+            loading={currentSlide === 0 ? "eager" : "lazy"}
+            decoding={currentSlide === 0 ? "sync" : "async"}
           />
         </AnimatePresence>
 
@@ -579,6 +582,10 @@ export default function Home() {
               <img
                 src={martinPhoto}
                 alt="Martin Schade"
+                width={700}
+                height={1052}
+                loading="lazy"
+                decoding="async"
                 className="w-full object-cover object-top"
               />
             </div>
