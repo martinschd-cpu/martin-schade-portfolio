@@ -35,6 +35,33 @@ router.post("/contact", async (req, res) => {
       ].join("\n"),
     });
 
+    try {
+      await sendGmailMessage({
+        to: email,
+        from: CONTACT_RECIPIENT,
+        replyTo: CONTACT_RECIPIENT,
+        subject: "Ihre Nachricht ist angekommen",
+        text: [
+          `Hallo ${name},`,
+          "",
+          "vielen Dank für Ihre Anfrage. Ich melde mich in Kürze bei Ihnen.",
+          "",
+          "Zur Übersicht, das haben Sie geschrieben:",
+          `Thema: ${topic}`,
+          "",
+          message,
+          "",
+          "Viele Grüße",
+          "Martin Schade",
+        ].join("\n"),
+      });
+    } catch (confirmationError) {
+      req.log.error(
+        { err: confirmationError },
+        "Failed to send contact form confirmation email",
+      );
+    }
+
     const data = SendContactMessageResponse.parse({ success: true });
     res.json(data);
   } catch (error) {
