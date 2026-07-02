@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -29,20 +29,39 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-    },
+const SLIDES = [
+  {
+    sentence: "Wir wachsen, aber niemand verantwortet wirklich die Roadmap.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80",
   },
-};
+  {
+    sentence: "Unsere Katalogdaten aus verschiedenen Quellen passen einfach nicht zusammen.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80",
+  },
+  {
+    sentence: "Unser Vertrieb lebt in Excel, nicht im CRM.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80",
+  },
+  {
+    sentence: "Unser PO ist kurzfristig weg, das Projekt kann nicht warten.",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80",
+  },
+];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { toast } = useToast();
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((s) => (s + 1) % SLIDES.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,14 +109,12 @@ export default function Home() {
           scrolled ? "bg-[#0D1930]/95 backdrop-blur-md py-3" : "bg-transparent py-5"
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          <div className="font-mono text-[#60A5FA] font-medium tracking-wider text-lg">MS</div>
-          <div className="hidden md:flex items-center gap-6 font-mono text-sm">
-            <a href="#hero" className="text-[#B8C2D4] hover:text-white transition-colors">01 Hero</a>
-            <a href="#situationen" className="text-[#B8C2D4] hover:text-white transition-colors">02 Situationen</a>
-            <a href="#ki" className="text-[#B8C2D4] hover:text-white transition-colors">03 KI</a>
-            <a href="#track-record" className="text-[#B8C2D4] hover:text-white transition-colors">04 Track Record</a>
-            <a href="#kontakt" className="text-[#60A5FA] hover:text-white transition-colors">09 Kontakt</a>
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-end">
+          <div className="hidden md:flex items-center gap-8 font-mono text-sm">
+            <a href="#situationen" className="text-[#B8C2D4] hover:text-white transition-colors">Situationen</a>
+            <a href="#ki" className="text-[#B8C2D4] hover:text-white transition-colors">KI</a>
+            <a href="#track-record" className="text-[#B8C2D4] hover:text-white transition-colors">Track Record</a>
+            <a href="#kontakt" className="text-[#60A5FA] hover:text-white transition-colors">Kontakt</a>
           </div>
           <button
             data-testid="button-mobile-menu"
@@ -115,11 +132,10 @@ export default function Home() {
         {menuOpen && (
           <div className="md:hidden bg-[#0D1930]/98 border-t border-[#ffffff15] px-6 pb-6 pt-4 flex flex-col gap-5 font-mono text-sm">
             {[
-              { href: "#hero", label: "01 Hero" },
-              { href: "#situationen", label: "02 Situationen" },
-              { href: "#ki", label: "03 KI" },
-              { href: "#track-record", label: "04 Track Record" },
-              { href: "#kontakt", label: "09 Kontakt" },
+              { href: "#situationen", label: "Situationen" },
+              { href: "#ki", label: "KI" },
+              { href: "#track-record", label: "Track Record" },
+              { href: "#kontakt", label: "Kontakt" },
             ].map((link) => (
               <a
                 key={link.href}
@@ -134,79 +150,120 @@ export default function Home() {
         )}
       </nav>
 
-      {/* 01 HERO */}
-      <section
-        id="hero"
-        className="relative text-white pt-32 pb-20 px-6 md:px-12 overflow-hidden"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80)",
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-        }}
-      >
-        {/* Navy overlay */}
-        <div className="absolute inset-0 bg-[#0D1930]/82" />
-        <div className="relative z-10 max-w-[1200px] mx-auto">
+      {/* 01 HERO — Full-screen image slider */}
+      <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden">
+        {/* Slides */}
+        <AnimatePresence mode="sync">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl"
-          >
-            <p className="font-mono text-[#60A5FA] text-sm md:text-base mb-8 uppercase tracking-widest">
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${SLIDES[currentSlide].image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </AnimatePresence>
+
+        {/* Permanent dark overlay */}
+        <div className="absolute inset-0 bg-[#0D1930]/72" />
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24">
+          <div className="max-w-4xl">
+            <p className="font-mono text-[#60A5FA] text-xs md:text-sm mb-8 uppercase tracking-[0.2em]">
               Für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint
             </p>
 
-            <div className="space-y-4 mb-12">
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight">
-                "Wir wachsen, aber niemand verantwortet wirklich die Roadmap."
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={currentSlide}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-8"
+              >
+                "{SLIDES[currentSlide].sentence}"
               </motion.h1>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-[#B8C2D4]">
-                "Unsere Katalogdaten aus verschiedenen Quellen passen einfach nicht zusammen."
-              </motion.h1>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-white/60">
-                "Unser Vertrieb lebt in Excel, nicht im CRM."
-              </motion.h1>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-white/40">
-                "Unser PO ist kurzfristig weg, das Projekt kann nicht warten."
-              </motion.h1>
-            </div>
+            </AnimatePresence>
 
-            <motion.p variants={fadeInUp} className="text-[#B8C2D4] italic text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-[#B8C2D4] italic text-lg md:text-xl mb-10 max-w-2xl leading-relaxed"
+            >
               Das sind keine Einzelfälle. Das sind die vier Situationen, in denen ich einsteige.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="mb-12">
-              <p className="font-serif text-xl md:text-2xl">Martin Schade. 10+ Jahre Produktführung bei Zalando Group und Enterprise SaaS, dreifacher Gründer.</p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="mb-10"
+            >
+              <p className="font-serif text-lg md:text-2xl text-white/90">
+                Martin Schade. 10+ Jahre Produktführung bei Zalando Group und Enterprise SaaS, dreifacher Gründer.
+              </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
-              <Button 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="flex items-center gap-8"
+            >
+              <Button
+                data-testid="button-cta-contact"
                 onClick={scrollToContact}
-                className="bg-[#60A5FA] hover:bg-[#60A5FA]/90 text-[#0D1930] rounded-none px-8 py-6 text-lg font-medium"
+                className="bg-[#60A5FA] hover:bg-[#60A5FA]/90 text-[#0D1930] rounded-none px-8 py-6 text-base font-medium"
               >
                 Verfügbarkeit anfragen
               </Button>
-            </motion.div>
-          </motion.div>
 
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-5 gap-0 border-t border-[#ffffff33]">
-            {[
-              { num: "10+ Jahre", label: "B2B-Produktführung" },
-              { num: "20M+", label: "Datenobjekte im Produktivbetrieb gesteuert" },
-              { num: "660+", label: "Marken auf einer Plattform vereint" },
-              { num: "3x", label: "Gründer, von 0 zum Launch" },
-              { num: "20+", label: "Direct Reports, cross-funktional" },
-            ].map((stat, i) => (
-              <div key={i} className="p-6 border-b md:border-b-0 border-r border-[#ffffff33] last:border-r-0">
-                <div className="font-serif text-3xl md:text-4xl text-[#60A5FA] mb-2">{stat.num}</div>
-                <div className="font-mono text-xs text-[#B8C2D4]">{stat.label}</div>
+              {/* Slide dots */}
+              <div className="flex items-center gap-3">
+                {SLIDES.map((_, i) => (
+                  <button
+                    key={i}
+                    data-testid={`button-slide-${i}`}
+                    onClick={() => setCurrentSlide(i)}
+                    className={`transition-all duration-300 rounded-full ${
+                      i === currentSlide
+                        ? "w-6 h-2 bg-[#60A5FA]"
+                        : "w-2 h-2 bg-white/40 hover:bg-white/70"
+                    }`}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
               </div>
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Stats band */}
+      <div className="bg-[#0D1930] border-t border-[#ffffff15]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-0">
+          {[
+            { num: "10+ Jahre", label: "B2B-Produktführung" },
+            { num: "20M+", label: "Datenobjekte im Produktivbetrieb" },
+            { num: "660+", label: "Marken auf einer Plattform" },
+            { num: "3x", label: "Gründer, von 0 zum Launch" },
+            { num: "20+", label: "Direct Reports, cross-funktional" },
+          ].map((stat, i) => (
+            <div key={i} className="p-6 md:p-8 border-r border-[#ffffff15] last:border-r-0 border-b md:border-b-0">
+              <div className="font-serif text-2xl md:text-3xl text-[#60A5FA] mb-1">{stat.num}</div>
+              <div className="font-mono text-xs text-[#B8C2D4] leading-snug">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* 02 VIER SITUATIONEN */}
       <section id="situationen" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
