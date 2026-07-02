@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useDocumentHead } from "@/hooks/use-document-head";
 import { useSendContactMessage } from "@workspace/api-client-react";
 import martinPhoto from "@assets/ChatGPT_Image_7._Mai_2026,_11_32_19_1782982718646.png";
 
@@ -56,6 +57,13 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const { toast } = useToast();
+
+  useDocumentHead({
+    title: "Interim Head of Product | Martin Schade",
+    description:
+      "Interim Head of Product für B2B-Scale-ups, Marketplaces und Konzern-Töchter: Roadmaps, Datenprodukte, KI-Initiativen und Produktorganisationen schnell stabilisieren.",
+    path: "/",
+  });
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((s) => (s + 1) % SLIDES.length);

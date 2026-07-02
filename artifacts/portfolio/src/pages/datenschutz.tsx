@@ -1,6 +1,13 @@
 import { Link } from "wouter";
+import { useDocumentHead } from "@/hooks/use-document-head";
 
 export default function Datenschutz() {
+  useDocumentHead({
+    title: "Datenschutzerklärung | Martin Schade",
+    description: "Datenschutzerklärung von Martin Schade: Informationen zur Erhebung, Verarbeitung und zu Ihren Rechten bezüglich personenbezogener Daten auf dieser Website.",
+    path: "/datenschutz",
+  });
+
   return (
     <div className="min-h-screen bg-[#0D1930] text-[#E8EDF5]">
       <div className="max-w-3xl mx-auto px-6 py-16">

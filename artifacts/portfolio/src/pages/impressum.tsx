@@ -1,6 +1,13 @@
 import { Link } from "wouter";
+import { useDocumentHead } from "@/hooks/use-document-head";
 
 export default function Impressum() {
+  useDocumentHead({
+    title: "Impressum | Martin Schade",
+    description: "Impressum und Anbieterkennzeichnung gemäß § 5 TMG für Martin Schade, Freiberuflicher Product Manager in Nürnberg.",
+    path: "/impressum",
+  });
+
   return (
     <div className="min-h-screen bg-[#0D1930] text-[#E8EDF5]">
       <div className="max-w-3xl mx-auto px-6 py-16">
