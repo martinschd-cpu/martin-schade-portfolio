@@ -172,13 +172,16 @@ export default function Home() {
         {/* Permanent dark overlay */}
         <div className="absolute inset-0 bg-[#0D1930]/72" />
 
-        {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24">
-          <div className="max-w-4xl">
-            <p className="font-mono text-[#60A5FA] text-xs md:text-sm mb-8 uppercase tracking-[0.2em]">
-              Für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint
-            </p>
+        {/* Eyebrow — fixed below nav */}
+        <div className="absolute top-20 md:top-24 left-0 right-0 z-10 px-6 md:px-16 lg:px-24">
+          <p className="font-mono text-[#60A5FA] text-xs md:text-sm uppercase tracking-[0.2em]">
+            Für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint
+          </p>
+        </div>
 
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center pt-28 md:pt-32 px-6 md:px-16 lg:px-24">
+          <div className="max-w-4xl">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={currentSlide}
