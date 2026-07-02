@@ -704,7 +704,7 @@ export default function Home() {
               </div>
               <div className="pb-8 border-b border-[#ffffff33]">
                 <div className="font-mono text-sm text-[#60A5FA] mb-2 tracking-widest uppercase">LinkedIn</div>
-                <a href="https://linkedin.com/in/martinschade-1b854225" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-[#60A5FA] transition-colors">linkedin.com/in/martinschade-1b854225</a>
+                <a href="https://www.linkedin.com/in/martin-schade-product/" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-[#60A5FA] transition-colors">linkedin.com/in/martin-schade-product</a>
               </div>
               <div>
                 <div className="font-mono text-sm text-[#60A5FA] mb-2 tracking-widest uppercase">Standort</div>
