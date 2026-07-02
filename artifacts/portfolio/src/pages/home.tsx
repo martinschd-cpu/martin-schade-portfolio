@@ -74,10 +74,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const formSchema = z.object({
     name: z.string().min(2, "Name ist erforderlich"),
     email: z.string().email("Ungültige E-Mail-Adresse"),
@@ -242,11 +238,13 @@ export default function Home() {
               className="flex items-center gap-8"
             >
               <Button
+                asChild
                 data-testid="button-cta-contact"
-                onClick={scrollToContact}
                 className="bg-[#60A5FA] hover:bg-[#60A5FA]/90 text-[#0D1930] rounded-none px-8 py-6 text-base font-medium"
               >
-                Verfügbarkeit anfragen
+                <a href="https://calendar.app.google/wmZefEZTVz5YUmi57" target="_blank" rel="noopener noreferrer">
+                  Termin vereinbaren
+                </a>
               </Button>
 
               {/* Slide dots */}
