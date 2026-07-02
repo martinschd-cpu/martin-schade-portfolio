@@ -269,7 +269,6 @@ export default function Home() {
       <section id="situationen" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">02</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Vier Situationen, ein Ansprechpartner</h2>
           </div>
 
@@ -319,7 +318,6 @@ export default function Home() {
       <section id="ki" className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">03</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4 max-w-3xl leading-tight">
               KI-Produktentwicklung ist bei mir keine Folie, sondern produktiv ausgeliefert.
             </h2>
@@ -360,7 +358,6 @@ export default function Home() {
       <section id="track-record" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">04</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Track Record</h2>
           </div>
 
@@ -440,7 +437,6 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">05</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Referenzen</h2>
           </div>
 
@@ -479,7 +475,6 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">06</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Zertifikate & Qualifikationen</h2>
           </div>
 
@@ -521,7 +516,6 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">07</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Tools & Stack</h2>
           </div>
 
@@ -545,7 +539,6 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">08</span>
             <h2 className="font-serif text-4xl md:text-5xl mt-4">Über mich</h2>
           </div>
 
@@ -573,7 +566,6 @@ export default function Home() {
       <section id="kontakt" className="py-32 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <span className="font-mono text-[#60A5FA] text-lg">09</span>
             <h2 className="font-serif text-5xl md:text-7xl mt-4 mb-4">Let's talk.</h2>
             <p className="text-[#B8C2D4] text-xl">30 Minuten, kein Deck.</p>
           </div>
