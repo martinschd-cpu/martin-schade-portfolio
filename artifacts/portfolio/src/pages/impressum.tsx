@@ -15,7 +15,9 @@ export default function Impressum() {
             <h2 className="text-lg font-semibold text-white mb-2">Angaben gemäß § 5 TMG</h2>
             <p>Martin Schade<br />
             Freiberuflicher Product Manager<br />
-            Nürnberg, Deutschland</p>
+            Eckhardstrasse 40<br />
+            90461 Nürnberg<br />
+            Deutschland</p>
           </div>
 
           <div>
@@ -30,12 +32,6 @@ export default function Impressum() {
             <h2 className="text-lg font-semibold text-white mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
             <p>Berufsbezeichnung: Freiberuflicher Product Manager / Interim Head of Product<br />
             Zuständige Aufsichtsbehörde: keine (freier Beruf)</p>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-white mb-2">Umsatzsteuer-ID</h2>
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
-            Auf Anfrage erhältlich.</p>
           </div>
 
           <div>
