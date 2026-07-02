@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://078926d5-2ed4-4b32-8425-bc39492b86b5-00-tep3hkm2tp9g-kdh6l2ag.kirk.replit.dev";
+const SITE_URL = import.meta.env.VITE_SITE_URL.replace(/\/+$/, "");
 
 export interface DocumentHeadOptions {
   title: string;
