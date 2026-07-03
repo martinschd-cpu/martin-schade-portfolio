@@ -1,79 +1,87 @@
 import { Link } from "wouter";
 import { useDocumentHead } from "@/hooks/use-document-head";
+import { useLanguage } from "@/lib/language-context";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Datenschutz() {
+  const { t } = useLanguage();
+  const d = t.datenschutz;
+
   useDocumentHead({
-    title: "Datenschutzerklärung | Martin Schade",
-    description: "Datenschutzerklärung von Martin Schade: Informationen zur Erhebung, Verarbeitung und zu Ihren Rechten bezüglich personenbezogener Daten auf dieser Website.",
+    title: d.meta.title,
+    description: d.meta.description,
     path: "/datenschutz",
   });
 
   return (
     <div className="min-h-screen bg-[#0D1930] text-[#E8EDF5]">
       <div className="max-w-3xl mx-auto px-6 py-16">
-        <Link href="/" className="font-mono text-sm text-[#60A5FA] hover:underline mb-8 inline-block tracking-widest uppercase">
-          ← Zurück
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link href="/" className="font-mono text-sm text-[#60A5FA] hover:underline inline-block tracking-widest uppercase">
+            {t.common.back}
+          </Link>
+          <LanguageSwitcher variant="dark" />
+        </div>
 
-        <h1 className="text-4xl font-bold mb-12 text-white">Datenschutzerklärung</h1>
+        <h1 className="text-4xl font-bold mb-12 text-white">{d.heading}</h1>
 
         <section className="space-y-10 text-[#B8C2D4] leading-relaxed">
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">1. Datenschutz auf einen Blick</h2>
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Allgemeine Hinweise</h3>
-            <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s1.heading}</h2>
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s1.h1}</h3>
+            <p>{d.s1.p1}</p>
 
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Datenerfassung auf dieser Website</h3>
-            <p><strong className="text-[#E8EDF5]">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br />
-            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s1.h2}</h3>
+            <p><strong className="text-[#E8EDF5]">{d.s1.q1}</strong><br />
+            {d.s1.a1}</p>
 
-            <p className="mt-2"><strong className="text-[#E8EDF5]">Wie erfassen wir Ihre Daten?</strong><br />
-            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen – z. B. durch das Kontaktformular. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
+            <p className="mt-2"><strong className="text-[#E8EDF5]">{d.s1.q2}</strong><br />
+            {d.s1.a2}</p>
 
-            <p className="mt-2"><strong className="text-[#E8EDF5]">Wofür nutzen wir Ihre Daten?</strong><br />
-            Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden, sofern Sie dazu eingewilligt haben.</p>
+            <p className="mt-2"><strong className="text-[#E8EDF5]">{d.s1.q3}</strong><br />
+            {d.s1.a3}</p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">2. Hosting</h2>
-            <p>Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
-            <p className="mt-2">Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s2.heading}</h2>
+            <p>{d.s2.p1}</p>
+            <p className="mt-2">{d.s2.p2}</p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Datenschutz</h3>
-            <p>Der Betreiber dieser Seiten nimmt den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s3.heading}</h2>
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s3.h1}</h3>
+            <p>{d.s3.p1}</p>
 
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Verantwortliche Stelle</h3>
-            <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s3.h2}</h3>
+            <p>{d.s3.p2Prefix}<br /><br />
             Martin Schade<br />
-            E-Mail: <a href="mailto:ms@martin-schade.de" className="text-[#60A5FA] hover:underline">ms@martin-schade.de</a><br />
-            Telefon: <a href="tel:+491629161676" className="text-[#60A5FA] hover:underline">+49 162 9161676</a></p>
+            {d.s3.emailLabel}: <a href="mailto:ms@martin-schade.de" className="text-[#60A5FA] hover:underline">ms@martin-schade.de</a><br />
+            {d.s3.phoneLabel}: <a href="tel:+491629161676" className="text-[#60A5FA] hover:underline">+49 162 9161676</a></p>
 
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Speicherdauer</h3>
-            <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung haben.</p>
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s3.h3}</h3>
+            <p>{d.s3.p3}</p>
 
-            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">Ihre Rechte</h3>
-            <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
+            <h3 className="font-semibold text-[#E8EDF5] mt-4 mb-1">{d.s3.h4}</h3>
+            <p>{d.s3.p4}</p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">4. Cookies</h2>
-            <p>Diese Website verwendet sogenannte „technisch notwendige Cookies". Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie richten keinen Schaden an. Wir verwenden Cookies, die zur Funktion der Website erforderlich sind (technisch notwendige Cookies). Diese Cookies werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt.</p>
-            <p className="mt-2">Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren.</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s4.heading}</h2>
+            <p>{d.s4.p1}</p>
+            <p className="mt-2">{d.s4.p2}</p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">5. Kontaktformular</h2>
-            <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-            <p className="mt-2">Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.</p>
-            <p className="mt-2">Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s5.heading}</h2>
+            <p>{d.s5.p1}</p>
+            <p className="mt-2">{d.s5.p2}</p>
+            <p className="mt-2">{d.s5.p3}</p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">6. Externe Links</h2>
-            <p>Diese Website enthält Links zu externen Diensten wie LinkedIn. Beim Klick auf solche Links verlassen Sie unsere Website. Für die Inhalte und Datenschutzpraktiken dieser externen Seiten sind wir nicht verantwortlich.</p>
+            <h2 className="text-lg font-semibold text-white mb-2">{d.s6.heading}</h2>
+            <p>{d.s6.p1}</p>
           </div>
         </section>
       </div>
