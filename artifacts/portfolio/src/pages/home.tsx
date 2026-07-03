@@ -130,10 +130,10 @@ export default function Home() {
             <a href="#ki" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.ki}</a>
             <a href="#track-record" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.trackRecord}</a>
             <a href="#kontakt" className="text-[#60A5FA] hover:text-white transition-colors">{h.nav.kontakt}</a>
-            <LanguageSwitcher variant="dark" />
+            <LanguageSwitcher variant="dark" instanceId="desktop" />
           </div>
           <div className="md:hidden flex items-center gap-4">
-            <LanguageSwitcher variant="dark" />
+            <LanguageSwitcher variant="dark" instanceId="mobile" />
             <button
               data-testid="button-mobile-menu"
               className="flex flex-col justify-center items-center w-8 h-8 gap-[5px] group"

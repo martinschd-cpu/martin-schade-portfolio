@@ -2,27 +2,29 @@ import { useLanguage } from "@/lib/language-context";
 
 interface LanguageSwitcherProps {
   variant?: "dark" | "light";
+  instanceId?: string;
 }
 
-export default function LanguageSwitcher({ variant = "dark" }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({ variant = "dark", instanceId }: LanguageSwitcherProps) {
   const { language, setLanguage, t } = useLanguage();
 
   const activeClass = variant === "dark" ? "text-white" : "text-[#1A1815]";
   const inactiveClass = variant === "dark" ? "text-[#B8C2D4] hover:text-white" : "text-[#1A1815]/50 hover:text-[#1A1815]";
+  const suffix = instanceId ? `-${instanceId}` : "";
 
   return (
     <div
       className="flex items-center gap-1 font-mono text-sm"
       role="group"
       aria-label={t.common.langSwitchLabel}
-      data-testid="language-switcher"
+      data-testid={`language-switcher${suffix}`}
     >
       <button
         type="button"
         onClick={() => setLanguage("de")}
         className={`px-1 transition-colors ${language === "de" ? activeClass + " font-semibold" : inactiveClass}`}
         aria-pressed={language === "de"}
-        data-testid="button-lang-de"
+        data-testid={`button-lang-de${suffix}`}
       >
         DE
       </button>
@@ -32,7 +34,7 @@ export default function LanguageSwitcher({ variant = "dark" }: LanguageSwitcherP
         onClick={() => setLanguage("en")}
         className={`px-1 transition-colors ${language === "en" ? activeClass + " font-semibold" : inactiveClass}`}
         aria-pressed={language === "en"}
-        data-testid="button-lang-en"
+        data-testid={`button-lang-en${suffix}`}
       >
         EN
       </button>
