@@ -1,8 +1,9 @@
 import { Router, type IRouter } from "express";
 import { SendContactMessageBody, SendContactMessageResponse } from "@workspace/api-zod";
-import { sendGmailMessage } from "../lib/gmail";
+import { sendMail } from "../lib/mailer";
 
-const CONTACT_RECIPIENT = "martin.schd@gmail.com";
+const CONTACT_RECIPIENT =
+  process.env["CONTACT_RECIPIENT"] ?? "martin.schd@gmail.com";
 
 const router: IRouter = Router();
 
@@ -21,9 +22,8 @@ router.post("/contact", async (req, res) => {
   const { name, email, topic, message } = parsed.data;
 
   try {
-    await sendGmailMessage({
+    await sendMail({
       to: CONTACT_RECIPIENT,
-      from: CONTACT_RECIPIENT,
       replyTo: email,
       subject: `Neue Kontaktanfrage: ${topic}`,
       text: [
@@ -36,9 +36,8 @@ router.post("/contact", async (req, res) => {
     });
 
     try {
-      await sendGmailMessage({
+      await sendMail({
         to: email,
-        from: CONTACT_RECIPIENT,
         replyTo: CONTACT_RECIPIENT,
         subject: "Ihre Nachricht ist angekommen",
         text: [

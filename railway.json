@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "PORT=3000 BASE_PATH=/ pnpm --filter @workspace/portfolio run build && pnpm --filter @workspace/api-server run build"
+  },
+  "deploy": {
+    "startCommand": "node artifacts/api-server/dist/index.mjs",
+    "healthcheckPath": "/api/healthz",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
+  }
+}
