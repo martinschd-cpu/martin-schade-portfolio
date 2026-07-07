@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
+import { loadGoogleAnalytics } from "@/lib/analytics";
 
 const COOKIE_KEY = "cookie_consent";
 
@@ -19,6 +20,7 @@ export default function CookieBanner() {
   function accept() {
     localStorage.setItem(COOKIE_KEY, "accepted");
     setVisible(false);
+    loadGoogleAnalytics();
   }
 
   function decline() {

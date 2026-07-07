@@ -30,6 +30,9 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import martinPhoto from "@/assets/martin-photo.webp";
 
 const heroSlide1 = "/hero-slide-1.webp";
+const heroSlide2 = "/hero-slide-2.webp";
+const heroSlide3 = "/hero-slide-3.webp";
+const heroSlide4 = "/hero-slide-4.webp";
 
 // Animation Variants
 const fadeInUp = {
@@ -37,12 +40,7 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 } as const;
 
-const SLIDE_IMAGES = [
-  heroSlide1,
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80",
-];
+const SLIDE_IMAGES = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
