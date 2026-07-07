@@ -1,6 +1,7 @@
 // SMTP mailer (nodemailer) — sends contact form emails via any SMTP provider.
 // Required env: SMTP_HOST, SMTP_USER, SMTP_PASS. Optional: SMTP_PORT (default 587), SMTP_FROM (default SMTP_USER).
 import nodemailer, { type Transporter } from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 
 const smtpHost = process.env["SMTP_HOST"];
 const smtpPort = Number(process.env["SMTP_PORT"] ?? 587);
@@ -21,7 +22,11 @@ function getTransporter(): Transporter {
     port: smtpPort,
     secure: smtpPort === 465,
     auth: { user: smtpUser, pass: smtpPass },
-  });
+    // Force IPv4: some container platforms (e.g. Railway) have broken IPv6
+    // routing, and smtp.gmail.com's AAAA record causes ETIMEDOUT otherwise.
+    // `family` is a documented nodemailer option missing from @types/nodemailer.
+    family: 4,
+  } as SMTPTransport.Options);
   return transporter;
 }
 
