@@ -1,2 +1,2 @@
-- [Contact form email delivery](contact-form-email.md) — portfolio contact form sends via SMTP (nodemailer) since the Railway migration; missing SMTP_HOST/USER/PASS in Railway = 502 on submit.
+- [Contact form email delivery](contact-form-email.md) — sends via SMTP (nodemailer) as ms@martin-schade.de (Google Workspace); working since 2026-07-08 after Railway plan upgrade + fresh App Password.
 - [Portfolio DE/EN i18n approach](portfolio-i18n.md) — hand-rolled i18n context (no library); add new copy in both languages to translations.ts.
