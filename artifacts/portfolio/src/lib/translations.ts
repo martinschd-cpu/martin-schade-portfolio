@@ -18,7 +18,7 @@ export const translations = {
         menuAriaLabel: "Menü öffnen",
       },
       hero: {
-        eyebrow: "Für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint",
+        eyebrow: "Interim Head of Product für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint",
         slides: [
           "Wir wachsen, aber niemand verantwortet wirklich die Roadmap.",
           "Unsere Katalogdaten aus verschiedenen Quellen passen einfach nicht zusammen.",
@@ -346,7 +346,7 @@ export const translations = {
         menuAriaLabel: "Open menu",
       },
       hero: {
-        eyebrow: "For B2B scale-ups, marketplaces, and corporate subsidiaries with their own product footprint",
+        eyebrow: "Interim Head of Product for B2B scale-ups, marketplaces, and corporate subsidiaries with their own product footprint",
         slides: [
           "We're growing, but nobody really owns the roadmap.",
           "Our catalog data from different sources just doesn't line up.",

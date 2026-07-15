@@ -192,9 +192,9 @@ export default function Home() {
 
         {/* Eyebrow — fixed below nav */}
         <div className="absolute top-20 md:top-24 left-0 right-0 z-10 px-6 md:px-16 lg:px-24">
-          <p className="font-mono text-[#60A5FA] text-xs md:text-sm uppercase tracking-[0.2em]">
+          <h1 className="font-mono text-[#60A5FA] text-xs md:text-sm uppercase tracking-[0.2em] font-normal">
             {h.hero.eyebrow}
-          </p>
+          </h1>
         </div>
 
         {/* Content */}
@@ -202,7 +202,7 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="min-h-[9rem] md:min-h-[15rem] lg:min-h-[19rem] mb-8">
               <AnimatePresence mode="wait">
-                <motion.h1
+                <motion.h2
                   key={currentSlide}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export default function Home() {
                   className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight"
                 >
                   "{h.hero.slides[currentSlide]}"
-                </motion.h1>
+                </motion.h2>
               </AnimatePresence>
             </div>
 
