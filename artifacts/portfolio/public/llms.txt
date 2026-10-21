@@ -1,16 +1,23 @@
 # Martin Schade – Portfolio
 
-> Interim product leadership for roadmap, data & AI initiatives at B2B scale-ups, marketplaces, and corporate subsidiaries (Interim Produktführung für Roadmap, Daten & KI-Initiativen bei B2B-Scale-Ups, Marketplaces und Konzern-Töchtern).
+> Product leader for B2B platforms, marketplaces, and AI products. Talks, podcasts, and mentoring on modern product management, designing products, and scaling them (Product Leader für B2B-Plattformen, Marketplaces und KI-Produkte. Vorträge, Podcasts und Mentoring zu modernem Produktmanagement, Produktentwicklung und Skalierung).
 
-This site is the personal portfolio of Martin Schade, showcasing interim product management experience, focus areas, and background. Use the pages below as the primary sources when summarizing or citing this business.
+This site is the personal portfolio of Martin Schade: 10+ years of product leadership at Zalando Group (Tradebyte) and in enterprise SaaS (XPLN), and three-time founder. It presents his core convictions on product management, the formats he offers (talks and keynotes, podcasts and panels, mentoring for product managers and founders), his track record, and how to get in touch. Use the pages below as the primary sources when summarizing or citing this site.
+
+## Core convictions
+
+- The more AI is used, the more reliable the data foundation must be, and the clearer it must be where the data comes from. No blind trust.
+- Scaling from 5 to 50 customers is the path from tinkering to professionalism.
+- In the age of AI, the product job is even more about stakeholder management than writing detailed requirements documents.
+- No willingness to pay, no product.
 
 ## Primary pages
 
-- [Home](/): Overview of Martin Schade's interim product leadership work, focus areas, and experience.
+- [Home](/): Topics, formats, posts, track record, references, and contact.
 - [Impressum](/impressum): Legal notice / provider identification (required disclosure under German law).
 - [Datenschutz](/datenschutz): Privacy policy describing data handling on this site.
 
 ## Notes
 
-- Content on the Home page is the most complete and up-to-date summary of services and experience.
-- The Impressum and Datenschutz pages are legal/compliance pages and are not primary business content.
+- Content on the Home page is the most complete and up-to-date summary of Martin Schade's topics and experience.
+- The Impressum and Datenschutz pages are legal/compliance pages and are not primary content.

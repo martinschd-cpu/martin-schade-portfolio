@@ -11,15 +11,17 @@
 - Internal development tooling and workspace libraries with no public HTML surface
 
 ## Target audience
-- German-speaking B2B scale-ups, marketplaces, and corporate subsidiaries needing interim product leadership, marketplace/data product audits, or AI/product strategy support.
+- Founders building and scaling B2B products
+- Event organizers and podcast hosts looking for a speaker / guest on product management
+- Product managers looking for a mentor
 
 ## Primary keywords
-- interim head of product
-- interim product manager
-- produktführung interim
-- marketplace audit
-- sales prozess automatisierung
-- KI produktentwicklung
+- product leader
+- produktmanagement vortrag / speaker
+- product management mentoring
+- produkte skalieren
+- KI im produktmanagement
+- b2b plattform / marketplace
 
 ## Dismissed categories
-- (None yet)
+- Interim / freelance product management (dropped 2026-10: site repositioned from job/mandate search to portfolio)
