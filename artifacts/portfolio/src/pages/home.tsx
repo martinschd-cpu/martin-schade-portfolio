@@ -123,9 +123,11 @@ export default function Home() {
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-end gap-8">
-          <div className="hidden md:flex items-center gap-8 font-mono text-sm">
-            <a href="#situationen" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.situationen}</a>
+          <div className="hidden md:flex items-center gap-5 lg:gap-8 font-mono text-sm">
+            <a href="#themen" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.themen}</a>
             <a href="#ki" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.ki}</a>
+            <a href="#formate" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.formate}</a>
+            <a href="#beitraege" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.beitraege}</a>
             <a href="#track-record" className="text-[#B8C2D4] hover:text-white transition-colors">{h.nav.trackRecord}</a>
             <a href="#kontakt" className="text-[#60A5FA] hover:text-white transition-colors">{h.nav.kontakt}</a>
             <LanguageSwitcher variant="dark" instanceId="desktop" />
@@ -149,8 +151,10 @@ export default function Home() {
         {menuOpen && (
           <div className="md:hidden bg-[#0D1930]/98 border-t border-[#ffffff15] px-6 pb-6 pt-4 flex flex-col gap-5 font-mono text-sm">
             {[
-              { href: "#situationen", label: h.nav.situationen },
+              { href: "#themen", label: h.nav.themen },
               { href: "#ki", label: h.nav.ki },
+              { href: "#formate", label: h.nav.formate },
+              { href: "#beitraege", label: h.nav.beitraege },
               { href: "#track-record", label: h.nav.trackRecord },
               { href: "#kontakt", label: h.nav.kontakt },
             ].map((link) => (
@@ -200,7 +204,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-start pt-40 md:pt-44 pb-8 px-6 md:px-16 lg:px-24">
           <div className="max-w-4xl">
-            <div className="min-h-[9rem] md:min-h-[15rem] lg:min-h-[19rem] mb-8">
+            <div className="min-h-[14rem] md:min-h-[19rem] lg:min-h-[23rem] mb-8">
               <AnimatePresence mode="wait">
                 <motion.h2
                   key={currentSlide}
@@ -284,15 +288,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 02 VIER SITUATIONEN */}
-      <section id="situationen" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
+      {/* 02 VIER THEMEN */}
+      <section id="themen" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl mt-4">{h.situationen.heading}</h2>
+            <h2 className="font-serif text-4xl md:text-5xl mt-4">{h.themen.heading}</h2>
           </div>
 
           <div className="border-t border-[#1A1815]/20">
-            {h.situationen.items.map((block, i) => (
+            {h.themen.items.map((block, i) => (
               <motion.div 
                 key={i} 
                 initial="hidden"
@@ -301,7 +305,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-12 border-b border-[#1A1815]/20"
               >
-                <div className="text-lg leading-relaxed">{block.symptom}</div>
+                <div className="font-serif text-2xl italic leading-snug">{block.question}</div>
                 <div>
                   <div className="font-mono text-sm text-[#60A5FA] mb-4 uppercase tracking-wider">{block.label}</div>
                   <div className="text-lg leading-relaxed text-[#1A1815]/80">{block.answer}</div>
@@ -339,7 +343,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04 TRACK RECORD */}
+      {/* 04 FORMATE */}
+      <section id="formate" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl mt-4">{h.formate.heading}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-[#1A1815]/20">
+            {h.formate.items.map((item, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="p-8 border-b border-r border-[#1A1815]/20"
+              >
+                <div className="font-mono text-xs text-[#60A5FA] tracking-widest uppercase mb-4">{item.audience}</div>
+                <h3 className="font-serif text-2xl mb-6">{item.title}</h3>
+                <p className="text-[#1A1815]/80 leading-relaxed">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-[#1A1815]/70 italic text-lg max-w-3xl">{h.formate.note}</p>
+        </div>
+      </section>
+
+      {/* 05 BEITRÄGE */}
+      <section id="beitraege" className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl mt-4">{h.beitraege.heading}</h2>
+            <p className="text-[#B8C2D4] text-xl mt-6 max-w-2xl">{h.beitraege.intro}</p>
+          </div>
+
+          {h.beitraege.items.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-[#ffffff33] mb-12">
+              {h.beitraege.items.map((post, i) => (
+                <a
+                  key={i}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-8 border-b border-r border-[#ffffff33] flex flex-col hover:bg-white/5 transition-colors"
+                >
+                  <h3 className="font-serif text-2xl mb-4 text-white group-hover:text-[#60A5FA] transition-colors">{post.title}</h3>
+                  <p className="text-[#B8C2D4] leading-relaxed">{post.teaser}</p>
+                </a>
+              ))}
+            </div>
+          )}
+
+          <Button
+            asChild
+            variant="outline"
+            className="bg-transparent border-[#60A5FA] text-[#60A5FA] hover:bg-[#60A5FA] hover:text-[#0D1930] rounded-none px-8 py-6 text-base font-medium"
+          >
+            <a href="https://www.linkedin.com/in/martin-schade-product/recent-activity/all/" target="_blank" rel="noopener noreferrer">
+              {h.beitraege.cta} →
+            </a>
+          </Button>
+        </div>
+      </section>
+
+      {/* 06 TRACK RECORD */}
       <section id="track-record" className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -377,7 +446,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05 REFERENZEN */}
+      {/* 07 REFERENZEN */}
       <section className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -402,7 +471,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06 ZERTIFIKATE & QUALIFIKATIONEN */}
+      {/* 08 ZERTIFIKATE & QUALIFIKATIONEN */}
       <section className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -444,7 +513,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 07 TOOLS & STACK */}
+      {/* 09 TOOLS & STACK */}
       <section className="py-24 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -465,7 +534,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 08 ÜBER MICH */}
+      {/* 10 ÜBER MICH */}
       <section className="py-24 px-6 md:px-12 bg-[#F4F0E8]">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -494,7 +563,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 09 KONTAKT */}
+      {/* 11 KONTAKT */}
       <section id="kontakt" className="py-32 px-6 md:px-12 bg-[#0D1930] text-white">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-16">
@@ -555,10 +624,10 @@ export default function Home() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="bg-[#0D1930] border-[#ffffff33] text-white font-sans">
-                            <SelectItem value="interim" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.interim}</SelectItem>
-                            <SelectItem value="audit" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.audit}</SelectItem>
-                            <SelectItem value="sales" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.sales}</SelectItem>
-                            <SelectItem value="proxy" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.proxy}</SelectItem>
+                            <SelectItem value="vortrag" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.vortrag}</SelectItem>
+                            <SelectItem value="podcast" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.podcast}</SelectItem>
+                            <SelectItem value="mentoring" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.mentoring}</SelectItem>
+                            <SelectItem value="sparring" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.sparring}</SelectItem>
                             <SelectItem value="sonstiges" className="focus:bg-[#60A5FA]/20 focus:text-white">{h.kontakt.form.topics.sonstiges}</SelectItem>
                           </SelectContent>
                         </Select>

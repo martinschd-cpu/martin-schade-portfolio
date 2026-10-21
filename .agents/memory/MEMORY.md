@@ -1,2 +1,3 @@
 - [Contact form email delivery](contact-form-email.md) — sends via SMTP (nodemailer) as ms@martin-schade.de (Google Workspace); working since 2026-07-08 after Railway plan upgrade + fresh App Password.
 - [Portfolio DE/EN i18n approach](portfolio-i18n.md) — hand-rolled i18n context (no library); add new copy in both languages to translations.ts.
+- [Portfolio positioning](portfolio-positioning.md) — since 2026-10 a portfolio (talks/podcasts/mentoring), not interim search; employer stays neutral, "Du" tone, hero = Martin's own theses.

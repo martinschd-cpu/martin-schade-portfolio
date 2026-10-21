@@ -1,3 +1,5 @@
+export type Beitrag = { title: string; teaser: string; url: string };
+
 export const translations = {
   de: {
     common: {
@@ -6,28 +8,30 @@ export const translations = {
     },
     home: {
       meta: {
-        title: "Interim Head of Product | Martin Schade",
+        title: "Martin Schade | Product Leader für B2B-Plattformen & KI",
         description:
-          "Interim Head of Product für B2B-Scale-ups, Marketplaces und Konzern-Töchter: Roadmaps, Datenprodukte, KI-Initiativen und Produktorganisationen schnell stabilisieren.",
+          "Martin Schade, Product Leader mit 10+ Jahren bei Zalando Group, Enterprise SaaS und als dreifacher Gründer. Vorträge, Podcasts und Mentoring zu Produktmanagement, Skalierung, Daten und KI.",
       },
       nav: {
-        situationen: "Situationen",
+        themen: "Themen",
         ki: "KI",
+        formate: "Formate",
+        beitraege: "Beiträge",
         trackRecord: "Track Record",
         kontakt: "Kontakt",
         menuAriaLabel: "Menü öffnen",
       },
       hero: {
-        eyebrow: "Interim Head of Product für B2B-Scale-ups, Marketplaces und Konzern-Töchter mit eigenem Produkt-Footprint",
+        eyebrow: "Product Leader für B2B-Plattformen, Marketplaces und KI-Produkte",
         slides: [
-          "Wir wachsen, aber niemand verantwortet wirklich die Roadmap.",
-          "Unsere Katalogdaten aus verschiedenen Quellen passen einfach nicht zusammen.",
-          "Unser Vertrieb lebt in Excel, nicht im CRM.",
-          "Unser PO ist kurzfristig weg, das Projekt kann nicht warten.",
+          "Je mehr KI entscheidet, desto wichtiger ist, woher die Daten kommen.",
+          "Von 5 auf 50 Kunden: der Weg vom Basteln zur Professionalität.",
+          "Im KI-Zeitalter ist Produktarbeit Stakeholder-Management, nicht Anforderungskatalog.",
+          "Ohne Zahlungsbereitschaft kein Produkt.",
         ],
-        intro: "Das sind keine Einzelfälle. Das sind die vier Situationen, in denen ich einsteige.",
+        intro: "Vier Überzeugungen aus über zehn Jahren Produktarbeit. Darüber spreche ich auf Bühnen, in Podcasts und im Mentoring.",
         bio: "Martin Schade. 10+ Jahre Produktführung bei Zalando Group und Enterprise SaaS, dreifacher Gründer.",
-        cta: "Termin vereinbaren",
+        cta: "Lass uns sprechen",
         slideAriaLabel: "Slide",
       },
       stats: [
@@ -37,36 +41,32 @@ export const translations = {
         { num: "3x", label: "Gründer, von 0 zum Launch" },
         { num: "20+", label: "Direct Reports, cross-funktional" },
       ],
-      situationen: {
-        heading: "Vier Situationen, ein Ansprechpartner",
+      themen: {
+        heading: "Vier Themen, über die ich gern spreche",
         items: [
           {
-            symptom:
-              "Das Team liefert Features, aber es gibt keine Roadmap mit echtem Business-Impact. Entscheidungen fallen ad hoc, weil niemand die Priorisierungslogik verantwortet.",
-            label: "INTERIM HEAD OF PRODUCT / VP PRODUCT",
+            question: "„Wir wollen KI einsetzen. Aber können wir unseren Daten überhaupt trauen?“",
+            label: "DATEN & KI",
             answer:
-              "OKR-Aufbau, Roadmap-Ownership, Teamstruktur, Alignment bis C-Level. Für Scale-ups im Übergang von Founder-led Product zu echter Produktorganisation.",
+              "Je mehr KI genutzt wird, desto zuverlässiger muss die Datenbasis sein, und desto klarer muss sein, woher die Daten kommen. Kein blindes Vertrauen in Modelle. Bei 20M+ Artikeln (XPLN) und 10M+ Produkten (Tradebyte) habe ich gelernt: Datenqualität ist ein Produktthema, kein IT-Ticket.",
           },
           {
-            symptom:
-              "Katalogdaten aus mehreren Quellen sind inkonsistent, der Sync bricht immer wieder. Die Architektur ist für wenige Partner gebaut, nicht für viele.",
-            label: "MARKETPLACE & DATENPRODUKT-AUDIT",
+            question: "„Mit den ersten Kunden lief es. Jetzt wird jeder neue Kunde zum Sonderprojekt.“",
+            label: "PRODUKTE SKALIEREN",
             answer:
-              "Analyse der bestehenden Architektur, klares Konzept für Multi-Marketplace-Logik, konkrete Priorisierung, wo ML/Automatisierung den größten Hebel hätte.",
+              "Von 5 auf 50 Kunden ist der Weg vom Basteln zur Professionalität. Dafür braucht es wiederholbare Prozesse, eine Architektur für viele statt für wenige und klare Prioritäten. Diesen Übergang habe ich bei Tradebyte (660+ Marken) und in meinen eigenen Gründungen begleitet.",
           },
           {
-            symptom:
-              "Sales-Prozesse leben in Excel und im Kopf einzelner Mitarbeiter. Es gibt Tool-Wildwuchs ohne Integration, Leads versickern.",
-            label: "SALES-PROZESS-AUTOMATISIERUNG",
+            question: "„Wenn KI Specs und User Stories schreibt: Was bleibt dann für Product Manager?“",
+            label: "PRODUKTMANAGEMENT IM KI-ZEITALTER",
             answer:
-              "CRM-Aufbau, Lead-Scoring, Automatisierung der Drip-Prozesse, Integration der bestehenden Tools statt neuer Wildwuchs.",
+              "Mehr als vorher, nämlich Stakeholder-Management. Ein Produkt wird nicht durch einen detaillierten Anforderungskatalog erfolgreich, sondern durch Alignment, klare Entscheidungen und die Fähigkeit, Menschen zusammenzubringen.",
           },
           {
-            symptom:
-              "Der PO oder PM ist kurzfristig weg, der Backlog verwaist. Ein wichtiges Projekt braucht sofort erfahrene Führung, aber keine Festanstellung ist budgetiert.",
-            label: "PROXY / FREELANCE PRODUCT OWNER",
+            question: "„Wir haben eine starke Idee. Aber zahlt dafür jemand?“",
+            label: "PRODUKTE ENTWERFEN",
             answer:
-              "Eingebettete Produktverantwortung im Entwicklungsteam ab sofort, Backlog-Führung, Sprint-Begleitung, kontinuierliche Auslieferung.",
+              "Ohne Zahlungsbereitschaft kein Produkt. Bevor die erste Zeile Code entsteht, muss klar sein, wer welches Problem hat und dafür bezahlt. Als Gründer habe ich Geschäftsmodelle validiert und eines bewusst beendet, als die Antwort Nein war.",
           },
         ],
       },
@@ -86,6 +86,33 @@ export const translations = {
             text: "Ich bewerte KI-Features nicht isoliert, sondern als Teil der Produktstrategie: Wo schafft ein Modell echten Kundennutzen, wo ist es nur Kosten. Diese Einordnung war Kernbestandteil meiner Advisory-Mandate.",
           },
         ],
+      },
+      formate: {
+        heading: "So kommen wir zusammen",
+        items: [
+          {
+            title: "Vorträge & Keynotes",
+            audience: "Für Veranstalter",
+            text: "Für Konferenzen, Meetups und interne Events. Themen: Produktstrategie, Plattformen skalieren, Daten und KI. Aus der Praxis, ohne Buzzword-Bingo.",
+          },
+          {
+            title: "Podcasts & Panels",
+            audience: "Für Podcaster und Moderator:innen",
+            text: "Ein Gesprächspartner zu modernem Produktmanagement, Marketplaces und Gründen, mit echten Geschichten, auch den gescheiterten.",
+          },
+          {
+            title: "Mentoring",
+            audience: "Für Product Manager und Gründer:innen",
+            text: "Für Product Manager, die den nächsten Karriereschritt gehen wollen, und für Gründer:innen auf dem Weg vom ersten Produkt zum skalierbaren Geschäft.",
+          },
+        ],
+        note: "Das erste Gespräch kostet dich nichts. Für Keynotes, Workshops oder längeres Mentoring finden wir einen passenden Rahmen.",
+      },
+      beitraege: {
+        heading: "Gedanken & Beiträge",
+        intro: "Ich schreibe regelmäßig über Produktmanagement, Plattformen und KI.",
+        items: [] as Beitrag[],
+        cta: "Mehr auf LinkedIn",
       },
       trackRecord: {
         heading: "Track Record",
@@ -189,34 +216,34 @@ export const translations = {
         paragraphs: [
           "Ich bin B2B-Plattform-Builder mit über 10 Jahren Produktverantwortung im Enterprise- und Marktplatzumfeld, kombiniert mit dreifacher Gründererfahrung (Riometa, Shopfinity, RecyClaim). Diese Kombination aus Führungserfahrung in Konzernstrukturen (Zalando Group) und dem Aufbau eigener Plattformen von Null bedeutet: Ich kenne beide Seiten, die etablierte Organisation und die frühe, unsichere Phase, in der noch nichts feststeht.",
           "Vor meiner Produktkarriere war ich acht Jahre Offizier der Bundeswehr, verantwortlich für 40 Personen in drei Teams unter einsatznahen Bedingungen. Strukturierte Entscheidungsfindung unter Unsicherheit und Stakeholder-Abstimmung unter Druck ist keine Floskel, sondern die Grundlage, auf der meine gesamte spätere Führungsarbeit aufbaut.",
-          "Ich arbeite dort, wo Produktführung, Marktplatz-Ökonomie und Datenprodukte zusammentreffen.",
+          "Heute teile ich, was ich dabei gelernt habe: auf Bühnen, in Podcasts und im Mentoring. Mit Gründer:innen und Product Managern, die Produkte nicht nur bauen, sondern skalieren wollen.",
         ],
       },
       kontakt: {
         heading: "Let's talk.",
-        subheading: "30 Minuten, kein Deck.",
+        subheading: "Vortrag, Podcast, Mentoring oder einfach eine Produktfrage? Schreib mir.",
         form: {
           name: "Name",
           email: "E-Mail",
-          topicLabel: "Ich suche:",
-          topicPlaceholder: "Bitte wählen...",
+          topicLabel: "Worum geht's?",
+          topicPlaceholder: "Bitte wählen …",
           topics: {
-            interim: "Interim-Leitung",
-            audit: "Marketplace-Audit",
-            sales: "Sales-Prozess-Automatisierung",
-            proxy: "Proxy Product Owner",
+            vortrag: "Vortrag / Keynote",
+            podcast: "Podcast / Panel",
+            mentoring: "Mentoring",
+            sparring: "Produkt-Sparring",
             sonstiges: "Sonstiges",
           },
           message: "Nachricht",
           submit: "Nachricht senden",
-          nameRequired: "Name ist erforderlich",
-          emailInvalid: "Ungültige E-Mail-Adresse",
-          topicRequired: "Bitte wählen Sie ein Thema",
-          messageTooShort: "Nachricht ist zu kurz",
+          nameRequired: "Bitte gib deinen Namen an",
+          emailInvalid: "Bitte gib eine gültige E-Mail-Adresse an",
+          topicRequired: "Bitte wähle ein Thema",
+          messageTooShort: "Deine Nachricht ist etwas kurz",
           toastSuccessTitle: "Nachricht gesendet",
-          toastSuccessDesc: "Vielen Dank für Ihre Anfrage. Ich melde mich in Kürze bei Ihnen.",
+          toastSuccessDesc: "Danke für deine Nachricht. Ich melde mich bald bei dir.",
           toastErrorTitle: "Nachricht konnte nicht gesendet werden",
-          toastErrorDesc: "Bitte versuchen Sie es später erneut oder schreiben Sie mir direkt per E-Mail.",
+          toastErrorDesc: "Bitte versuch es später noch einmal oder schreib mir direkt per E-Mail.",
         },
         info: {
           emailLabel: "E-Mail",
@@ -235,20 +262,17 @@ export const translations = {
     impressum: {
       meta: {
         title: "Impressum | Martin Schade",
-        description: "Impressum und Anbieterkennzeichnung gemäß § 5 TMG für Martin Schade, Freiberuflicher Product Manager in Nürnberg.",
+        description: "Impressum und Anbieterkennzeichnung gemäß § 5 DDG für Martin Schade, Nürnberg.",
       },
       heading: "Impressum",
-      angabenHeading: "Angaben gemäß § 5 TMG",
-      addressLines: ["Martin Schade", "Freiberuflicher Product Manager", "Eckhardstrasse 40", "90461 Nürnberg", "Deutschland"],
+      angabenHeading: "Angaben gemäß § 5 DDG",
+      addressLines: ["Martin Schade", "Produktberatung, Mentoring & Vorträge", "Eckhardstrasse 40", "90461 Nürnberg", "Deutschland"],
       kontaktHeading: "Kontakt",
       emailLabel: "E-Mail",
       phoneLabel: "Telefon",
-      berufHeading: "Berufsbezeichnung und berufsrechtliche Regelungen",
-      berufText1: "Berufsbezeichnung: Freiberuflicher Product Manager / Interim Head of Product",
-      berufText2: "Zuständige Aufsichtsbehörde: keine (freier Beruf)",
       haftungInhalteHeading: "Haftung für Inhalte",
       haftungInhalteText1:
-        "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+        "Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
       haftungInhalteText2:
         "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
       haftungLinksHeading: "Haftung für Links",
@@ -321,7 +345,7 @@ export const translations = {
       backLink: "← Zurück zur Startseite",
     },
     cookieBanner: {
-      text: "Diese Website verwendet technisch notwendige Cookies, um den Betrieb sicherzustellen. Weitere Informationen finden Sie in unserer",
+      text: "Diese Website verwendet technisch notwendige Cookies, um den Betrieb sicherzustellen. Weitere Informationen findest du in unserer",
       linkText: "Datenschutzerklärung",
       decline: "Ablehnen",
       accept: "Akzeptieren",
@@ -334,28 +358,30 @@ export const translations = {
     },
     home: {
       meta: {
-        title: "Interim Head of Product | Martin Schade",
+        title: "Martin Schade | Product Leader for B2B Platforms & AI",
         description:
-          "Interim Head of Product for B2B scale-ups, marketplaces, and corporate subsidiaries: quickly stabilizing roadmaps, data products, AI initiatives, and product organizations.",
+          "Martin Schade, product leader with 10+ years at Zalando Group, in enterprise SaaS and as a three-time founder. Talks, podcasts and mentoring on product management, scaling, data and AI.",
       },
       nav: {
-        situationen: "Situations",
+        themen: "Topics",
         ki: "AI",
+        formate: "Formats",
+        beitraege: "Posts",
         trackRecord: "Track Record",
         kontakt: "Contact",
         menuAriaLabel: "Open menu",
       },
       hero: {
-        eyebrow: "Interim Head of Product for B2B scale-ups, marketplaces, and corporate subsidiaries with their own product footprint",
+        eyebrow: "Product leader for B2B platforms, marketplaces and AI products",
         slides: [
-          "We're growing, but nobody really owns the roadmap.",
-          "Our catalog data from different sources just doesn't line up.",
-          "Our sales team lives in Excel, not in the CRM.",
-          "Our PO just left on short notice, and the project can't wait.",
+          "The more AI decides, the more it matters where the data comes from.",
+          "From 5 to 50 customers: the path from tinkering to professionalism.",
+          "In the age of AI, product work is stakeholder management, not requirements documents.",
+          "No willingness to pay, no product.",
         ],
-        intro: "These aren't isolated cases. These are the four situations I step into.",
+        intro: "Four convictions from more than ten years of product work. I talk about them on stage, on podcasts and in mentoring.",
         bio: "Martin Schade. 10+ years of product leadership at Zalando Group and enterprise SaaS, three-time founder.",
-        cta: "Schedule a call",
+        cta: "Let's talk",
         slideAriaLabel: "Slide",
       },
       stats: [
@@ -365,36 +391,32 @@ export const translations = {
         { num: "3x", label: "Founder, from 0 to launch" },
         { num: "20+", label: "Direct reports, cross-functional" },
       ],
-      situationen: {
-        heading: "Four situations, one point of contact",
+      themen: {
+        heading: "Four topics I love to talk about",
         items: [
           {
-            symptom:
-              "The team ships features, but there's no roadmap with real business impact. Decisions are made ad hoc because nobody owns the prioritization logic.",
-            label: "INTERIM HEAD OF PRODUCT / VP PRODUCT",
+            question: "“We want to use AI. But can we even trust our data?”",
+            label: "DATA & AI",
             answer:
-              "OKR setup, roadmap ownership, team structure, alignment up to C-level. For scale-ups transitioning from founder-led product to a real product organization.",
+              "The more AI is used, the more reliable the data foundation has to be, and the clearer it has to be where the data comes from. No blind trust in models. Working with 20M+ items (XPLN) and 10M+ products (Tradebyte) taught me: data quality is a product topic, not an IT ticket.",
           },
           {
-            symptom:
-              "Catalog data from multiple sources is inconsistent, and the sync keeps breaking. The architecture was built for a handful of partners, not many.",
-            label: "MARKETPLACE & DATA PRODUCT AUDIT",
+            question: "“It worked with our first customers. Now every new customer turns into a special project.”",
+            label: "SCALING PRODUCTS",
             answer:
-              "Analysis of the existing architecture, a clear concept for multi-marketplace logic, and concrete prioritization of where ML/automation would have the biggest impact.",
+              "Going from 5 to 50 customers is the path from tinkering to professionalism. It takes repeatable processes, an architecture built for many instead of a few, and clear priorities. I've guided this transition at Tradebyte (660+ brands) and in my own startups.",
           },
           {
-            symptom:
-              "Sales processes live in Excel and in individual employees' heads. There's tool sprawl with no integration, and leads fall through the cracks.",
-            label: "SALES PROCESS AUTOMATION",
+            question: "“If AI writes the specs and user stories, what's left for product managers?”",
+            label: "PRODUCT MANAGEMENT IN THE AGE OF AI",
             answer:
-              "CRM setup, lead scoring, automation of drip processes, integrating existing tools instead of adding more sprawl.",
+              "More than before: stakeholder management. Products don't succeed because of a detailed requirements catalog, but through alignment, clear decisions and the ability to bring people together.",
           },
           {
-            symptom:
-              "The PO or PM just left on short notice, and the backlog is orphaned. An important project needs experienced leadership right away, but there's no budget for a full-time hire.",
-            label: "PROXY / FREELANCE PRODUCT OWNER",
+            question: "“We have a strong idea. But will anyone pay for it?”",
+            label: "DESIGNING PRODUCTS",
             answer:
-              "Embedded product ownership within the development team starting immediately, backlog management, sprint support, continuous delivery.",
+              "No willingness to pay, no product. Before the first line of code is written, it has to be clear who has which problem and who will pay to solve it. As a founder, I've validated business models and deliberately wound one down when the answer was no.",
           },
         ],
       },
@@ -414,6 +436,33 @@ export const translations = {
             text: "I don't evaluate AI features in isolation, but as part of the product strategy: where a model creates real customer value versus where it's just cost. This framing was a core part of my advisory mandates.",
           },
         ],
+      },
+      formate: {
+        heading: "Ways to work together",
+        items: [
+          {
+            title: "Talks & keynotes",
+            audience: "For event organizers",
+            text: "For conferences, meetups and internal events. Topics: product strategy, scaling platforms, data and AI. Grounded in practice, no buzzword bingo.",
+          },
+          {
+            title: "Podcasts & panels",
+            audience: "For podcast hosts and moderators",
+            text: "A conversation partner on modern product management, marketplaces and founding, with real stories, including the ones that failed.",
+          },
+          {
+            title: "Mentoring",
+            audience: "For product managers and founders",
+            text: "For product managers ready for their next career step, and for founders on the way from a first product to a scalable business.",
+          },
+        ],
+        note: "The first conversation is on me. For keynotes, workshops or longer-term mentoring, we'll find the right setup.",
+      },
+      beitraege: {
+        heading: "Thoughts & posts",
+        intro: "I write regularly about product management, platforms and AI.",
+        items: [] as Beitrag[],
+        cta: "More on LinkedIn",
       },
       trackRecord: {
         heading: "Track Record",
@@ -513,32 +562,32 @@ export const translations = {
         paragraphs: [
           "I'm a B2B platform builder with over 10 years of product ownership in enterprise and marketplace environments, combined with three-time founder experience (Riometa, Shopfinity, RecyClaim). This combination of leadership experience in corporate structures (Zalando Group) and building my own platforms from zero means I know both sides — the established organization and the early, uncertain phase where nothing is settled yet.",
           "Before my product career, I spent eight years as an officer in the German Armed Forces, responsible for 40 people across three teams under near-deployment conditions. Structured decision-making under uncertainty and stakeholder alignment under pressure isn't a buzzword for me — it's the foundation my entire later leadership work is built on.",
-          "I work where product leadership, marketplace economics, and data products intersect.",
+          "Today I share what I've learned along the way: on stage, on podcasts and in mentoring. With founders and product managers who don't just want to build products, but scale them.",
         ],
       },
       kontakt: {
         heading: "Let's talk.",
-        subheading: "30 minutes, no deck.",
+        subheading: "A talk, a podcast, mentoring or just a product question? Write to me.",
         form: {
           name: "Name",
           email: "Email",
-          topicLabel: "I'm looking for:",
-          topicPlaceholder: "Please select...",
+          topicLabel: "What's it about?",
+          topicPlaceholder: "Please select …",
           topics: {
-            interim: "Interim leadership",
-            audit: "Marketplace audit",
-            sales: "Sales process automation",
-            proxy: "Proxy product owner",
+            vortrag: "Talk / keynote",
+            podcast: "Podcast / panel",
+            mentoring: "Mentoring",
+            sparring: "Product sparring",
             sonstiges: "Other",
           },
           message: "Message",
           submit: "Send message",
-          nameRequired: "Name is required",
-          emailInvalid: "Invalid email address",
+          nameRequired: "Please enter your name",
+          emailInvalid: "Please enter a valid email address",
           topicRequired: "Please select a topic",
-          messageTooShort: "Message is too short",
+          messageTooShort: "Your message is a bit short",
           toastSuccessTitle: "Message sent",
-          toastSuccessDesc: "Thank you for your inquiry. I'll get back to you shortly.",
+          toastSuccessDesc: "Thanks for your message. I'll get back to you soon.",
           toastErrorTitle: "Message could not be sent",
           toastErrorDesc: "Please try again later or email me directly.",
         },
@@ -559,20 +608,17 @@ export const translations = {
     impressum: {
       meta: {
         title: "Legal Notice | Martin Schade",
-        description: "Legal notice and provider identification pursuant to § 5 TMG for Martin Schade, freelance product manager in Nuremberg.",
+        description: "Legal notice and provider identification pursuant to § 5 DDG for Martin Schade, Nuremberg.",
       },
       heading: "Legal Notice",
-      angabenHeading: "Information pursuant to § 5 TMG",
-      addressLines: ["Martin Schade", "Freelance Product Manager", "Eckhardstrasse 40", "90461 Nuremberg", "Germany"],
+      angabenHeading: "Information pursuant to § 5 DDG",
+      addressLines: ["Martin Schade", "Product consulting, mentoring & talks", "Eckhardstrasse 40", "90461 Nuremberg", "Germany"],
       kontaktHeading: "Contact",
       emailLabel: "Email",
       phoneLabel: "Phone",
-      berufHeading: "Occupation and professional regulations",
-      berufText1: "Occupation: Freelance Product Manager / Interim Head of Product",
-      berufText2: "Responsible supervisory authority: none (liberal profession)",
       haftungInhalteHeading: "Liability for content",
       haftungInhalteText1:
-        "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 (1) TMG. However, pursuant to §§ 8 to 10 TMG, we as a service provider are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+        "As a service provider, we are responsible for our own content on these pages in accordance with general laws. However, we as a service provider are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
       haftungInhalteText2:
         "Obligations to remove or block the use of information under general law remain unaffected by this. However, liability in this regard is only possible from the point in time at which a concrete infringement becomes known. If we become aware of any such infringements, we will remove this content immediately.",
       haftungLinksHeading: "Liability for links",

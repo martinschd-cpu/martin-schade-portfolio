@@ -39,13 +39,13 @@ router.post("/contact", async (req, res) => {
       await sendMail({
         to: email,
         replyTo: CONTACT_RECIPIENT,
-        subject: "Ihre Nachricht ist angekommen",
+        subject: "Deine Nachricht ist angekommen",
         text: [
           `Hallo ${name},`,
           "",
-          "vielen Dank für Ihre Anfrage. Ich melde mich in Kürze bei Ihnen.",
+          "danke für deine Nachricht. Ich melde mich bald bei dir.",
           "",
-          "Zur Übersicht, das haben Sie geschrieben:",
+          "Zur Übersicht, das hast du geschrieben:",
           `Thema: ${topic}`,
           "",
           message,

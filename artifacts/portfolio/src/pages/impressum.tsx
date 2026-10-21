@@ -47,12 +47,6 @@ export default function Impressum() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white mb-2">{i.berufHeading}</h2>
-            <p>{i.berufText1}<br />
-            {i.berufText2}</p>
-          </div>
-
-          <div>
             <h2 className="text-lg font-semibold text-white mb-2">{i.haftungInhalteHeading}</h2>
             <p>{i.haftungInhalteText1}</p>
             <p className="mt-2">{i.haftungInhalteText2}</p>
